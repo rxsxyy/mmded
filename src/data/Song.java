@@ -1,5 +1,6 @@
 package data;
 
+import java.nio.file.Path;
 import java.util.List;
 
 public class Song {
@@ -7,6 +8,7 @@ public class Song {
 	List<String> artists;
 	int track_num;
 	int disc_num;
+	Path path;
 
 	public Song() {
 	}
@@ -16,6 +18,11 @@ public class Song {
 		this.artists = artists;
 		this.track_num = track_num;
 		this.disc_num = disc_num;
+	}
+
+	public Song(String title, List<String> artists, int track_num, int disc_num, Path path) {
+		this(title, artists, track_num, disc_num);
+		this.path = path;
 	}
 
 	public String getTitle() {
@@ -48,5 +55,13 @@ public class Song {
 
 	public void setDisc_num(int disc_num) {
 		this.disc_num = disc_num;
+	}
+
+	public Path getPath() {
+		return path;
+	}
+
+	public void setPath(Path path) {
+		this.path = path;
 	}
 }
