@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Album {
 	List<Song> tracks;
-	ReleaseType releaseType;
 	String albumName;
 	/**
 	 * Same as the first song artist (by default, it is editable).
@@ -14,16 +13,17 @@ public class Album {
 	String albumArtist;
 	String albumGenre;
 	Date albumReleaseDate;
+	ReleaseType releaseType;
 	byte[] albumCoverData;
 	String albumCoverMimeType;
 
-	public Album(List<Song> tracks, ReleaseType releaseType, String albumName, String albumArtist, String albumGenre, Date albumReleaseDate) {
+	public Album(List<Song> tracks, String albumName, String albumArtist, String albumGenre, Date albumReleaseDate, ReleaseType releaseType) {
 		this.tracks = tracks;
-		this.releaseType = releaseType;
 		this.albumName = albumName;
 		this.albumArtist = albumArtist;
 		this.albumGenre = albumGenre;
 		this.albumReleaseDate = albumReleaseDate;
+		this.releaseType = releaseType;
 	}
 
 	public List<Song> getTracks() {
@@ -32,14 +32,6 @@ public class Album {
 
 	public void setTracks(List<Song> tracks) {
 		this.tracks = tracks;
-	}
-
-	public ReleaseType getReleaseType() {
-		return releaseType;
-	}
-
-	public void setReleaseType(ReleaseType releaseType) {
-		this.releaseType = releaseType;
 	}
 
 	public String getAlbumName() {
@@ -72,6 +64,14 @@ public class Album {
 
 	public void setAlbumReleaseDate(Date albumReleaseDate) {
 		this.albumReleaseDate = albumReleaseDate;
+	}
+
+	public ReleaseType getReleaseType() {
+		return releaseType;
+	}
+
+	public void setReleaseType(ReleaseType releaseType) {
+		this.releaseType = releaseType;
 	}
 
 	public byte[] getAlbumCoverData() {

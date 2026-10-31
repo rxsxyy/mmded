@@ -27,4 +27,9 @@ public enum ReleaseType {
 	public String getType() {
 		return type;
 	}
+
+	@Override
+	public String toString() {
+		return type;
+	}
 }
