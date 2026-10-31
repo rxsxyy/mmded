@@ -1,30 +1,37 @@
 package data;
 
+import java.util.Date;
 import java.util.List;
 
 public class Album {
-
 	List<Song> tracks;
 	ReleaseType releaseType;
 	String albumName;
+	/**
+	 * Same as the first song artist (by default, it is editable).
+	 * @see Song#getArtist()
+	 */
 	String albumArtist;
 	String albumGenre;
+	Date albumReleaseDate;
 	byte[] albumCoverData;
 	String albumCoverMimeType;
 
-	public Album() {
-	}
-
-	public Album(List<Song> tracks, ReleaseType releaseType, String albumName, String albumArtist, String albumGenre) {
+	public Album(List<Song> tracks, ReleaseType releaseType, String albumName, String albumArtist, String albumGenre, Date albumReleaseDate) {
 		this.tracks = tracks;
 		this.releaseType = releaseType;
 		this.albumName = albumName;
 		this.albumArtist = albumArtist;
 		this.albumGenre = albumGenre;
+		this.albumReleaseDate = albumReleaseDate;
 	}
 
 	public List<Song> getTracks() {
 		return tracks;
+	}
+
+	public void setTracks(List<Song> tracks) {
+		this.tracks = tracks;
 	}
 
 	public ReleaseType getReleaseType() {
@@ -57,6 +64,14 @@ public class Album {
 
 	public void setAlbumGenre(String albumGenre) {
 		this.albumGenre = albumGenre;
+	}
+
+	public Date getAlbumReleaseDate() {
+		return albumReleaseDate;
+	}
+
+	public void setAlbumReleaseDate(Date albumReleaseDate) {
+		this.albumReleaseDate = albumReleaseDate;
 	}
 
 	public byte[] getAlbumCoverData() {

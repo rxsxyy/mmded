@@ -1,28 +1,30 @@
 package data;
 
-import java.nio.file.Path;
 import java.util.List;
 
 public class Song {
+	/**
+	 * Track title.
+	 */
 	String title;
+	/**
+	 * List of artists, <code>artists.get(0)</code> is set as main artist while the rest are featured artists.
+	 */
 	List<String> artists;
-	int track_num;
-	int disc_num;
-	Path path;
+	/**
+	 * Track number in Album.
+	 */
+	int trackNum;
+	/**
+	 * Disc number in Album.
+	 */
+	int discNum;
 
-	public Song() {
-	}
-
-	public Song(String title, List<String> artists, int track_num, int disc_num) {
+	public Song(String title, List<String> artists, int trackNum, int discNum) {
 		this.title = title;
 		this.artists = artists;
-		this.track_num = track_num;
-		this.disc_num = disc_num;
-	}
-
-	public Song(String title, List<String> artists, int track_num, int disc_num, Path path) {
-		this(title, artists, track_num, disc_num);
-		this.path = path;
+		this.trackNum = trackNum;
+		this.discNum = discNum;
 	}
 
 	public String getTitle() {
@@ -33,6 +35,11 @@ public class Song {
 		this.title = title;
 	}
 
+	public String getArtist() {
+		List<String> list = getArtists();
+		return ((list == null) || list.isEmpty()) ? null : list.get(0);
+	}
+
 	public List<String> getArtists() {
 		return artists;
 	}
@@ -41,27 +48,19 @@ public class Song {
 		this.artists = artists;
 	}
 
-	public int getTrack_num() {
-		return track_num;
+	public int getTrackNum() {
+		return trackNum;
 	}
 
-	public void setTrack_num(int track_num) {
-		this.track_num = track_num;
+	public void setTrackNum(int trackNum) {
+		this.trackNum = trackNum;
 	}
 
-	public int getDisc_num() {
-		return disc_num;
+	public int getDiscNum() {
+		return discNum;
 	}
 
-	public void setDisc_num(int disc_num) {
-		this.disc_num = disc_num;
-	}
-
-	public Path getPath() {
-		return path;
-	}
-
-	public void setPath(Path path) {
-		this.path = path;
+	public void setDiscNum(int discNum) {
+		this.discNum = discNum;
 	}
 }
